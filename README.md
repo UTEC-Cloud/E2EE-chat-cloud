@@ -57,7 +57,11 @@ go run .
     * Escalabilidad de WebSockets
 
 * Cloud Databases
-    * Base de datos NoSQL en la nube
+    * Base de datos de documentos para usar User Key Bundles
+    * Base de datos de llave-valor para gestión de WebSockets
 
 * Dockerización
     * Despliegue de lambdas con imágenes docker
+
+* Cloud & DevOps
+    * CI/CD pipeline de despliegue de aplicación
