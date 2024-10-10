@@ -65,3 +65,8 @@ go run .
 
 * Cloud & DevOps
     * CI/CD pipeline de despliegue de aplicación
+
+## Referencias
+
+* The X3DH Key Agreement Protocol. (2016). Signal Messenger. https://signal.org/docs/specifications/x3dh/
+* API Gateway WebSocket APIs - Amazon API Gateway. (n.d.). https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html
