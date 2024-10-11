@@ -82,7 +82,15 @@ go run .
 * Cloud & DevOps
     * CI/CD pipeline de despliegue de aplicación
 
+* Cloud Monitoring:
+    * Logging, alertas y escalabilidad
+
+* Cloud Security
+    * Autenticación con servicios cloud (Amazon Cognito)
+
 ## Referencias
 
 1) The X3DH Key Agreement Protocol. (2016). Signal Messenger. https://signal.org/docs/specifications/x3dh/
 2) API Gateway WebSocket APIs - Amazon API Gateway. (n.d.). https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html
+3) Vishnevskiy, S. (2021, August 25). How Discord Scaled Elixir to 5,000,000 Concurrent Users. Discord. https://discord.com/blog/how-discord-scaled-elixir-to-5-000-000-concurrent-users
+4) Monitor your Amazon EC2 Auto Scaling groups - Amazon EC2 Auto Scaling. (n.d.). https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-monitoring-features.html
