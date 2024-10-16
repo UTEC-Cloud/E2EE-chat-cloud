@@ -66,27 +66,25 @@ go run .
 
 
 
-## Tópicos de cloud
+## Objetivos & Topicos Cloud
+### Migración a la Nube
+Transformar la arquitectura monolítica actual a un enfoque serverless, optimizado para su despliegue en la nube, mejorando escalabilidad, eficiencia y costos.
 
-* Cloud Serverless
-    * Migración de la Arquitectura Monolítica a Serverless
-    * Escalabilidad de WebSockets
+#### Topicos
+* **Cloud Serverless**: Implementación de WebSockets serverless para mejorar la comunicación en tiempo real (servicio de chat)
+* **Cloud Databases**: Uso de bases de datos NoSQL en la nube (DocumentDB and DynamoDB)
+* **Dockerización**: Uso de imágenes Docker para la implementación de funciones Lambda
 
-* Cloud Databases
-    * Base de datos de documentos para usar User Key Bundles
-    * Base de datos de llave-valor para gestión de WebSockets
+### Monitoreo y Escalabilidad
+Desarrollar un sistema de autoescalado para el servicio de chat basado en WebSockets, permitiendo adaptarse automáticamente a variaciones en la carga.
 
-* Dockerización
-    * Despliegue de lambdas con imágenes docker
+#### Topicos
+* **Cloud Monitoring**: Implementación de logging, alertas y estrategias de escalabilidad automatizada para mantener la operatividad y detectar problemas proactivamente.
 
-* Cloud & DevOps
-    * CI/CD pipeline de despliegue de aplicación
+### Misc
+* **Cloud & DevOps**: Creación de un pipeline CI/CD para el despliegue continuo y automatizado de la aplicación.
+* **Cloud Security**: Autenticación de usuarios mediante servicios cloud, utilizando Amazon Cognito para la gestión de identidades y acceso seguro.
 
-* Cloud Monitoring:
-    * Logging, alertas y escalabilidad
-
-* Cloud Security
-    * Autenticación con servicios cloud (Amazon Cognito)
 
 ## Referencias
 
