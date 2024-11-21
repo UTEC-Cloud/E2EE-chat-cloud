@@ -8,7 +8,7 @@
 
 Sistema de mensajería segura con cifrado E2EE basado en X3HD.
 
-## Tópicos de Cloud Computing
+## Tópicos de Cloud Computing utilizados
 
 * FaaS &  CaaS: Lambda & EC2
 * Escalabilidad: ECS + LB
