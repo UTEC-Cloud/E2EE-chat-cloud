@@ -8,6 +8,17 @@
 
 Sistema de mensajería segura con cifrado E2EE basado en X3HD.
 
+## Tópicos de Cloud Computing utilizados
+
+* FaaS &  CaaS: Lambda & EC2
+* Escalabilidad: ECS + LB
+* IaC: Terraform
+* NoSQL: DynamoDB + DocumentDB
+
+## Proveedor de la nube
+* AWS
+
+
 ## Funcionalidades
 
 |  ID |  CATEGORIA | REQUERIMIENTO |
@@ -44,7 +55,11 @@ La base de datos utilizada es una base de documentos: MongoDB. Almacena la infor
 
 El escalamiento de servicios con websockets es un desafío en arquitecturas monolíticas. Para resolver este problema, se propone utilizar servicios de cluster detras de un load balancer y una api gateway para gestionar las conexiones WebSocket. Esto permite desacoplar la lógica de negocio de la comunicación en tiempo real, permitiendo escalar de forma independiente.
 
-![image](images/new_architecture.png "New architecture")
+![image](images/new_architecture.png "Architecture proposal")
+
+## Nueva arquitectura (P2)
+
+![image](images/architecture_p2.png "New architecture (P2)")
 
 ## Pasos para desplegar la aplicación
 
