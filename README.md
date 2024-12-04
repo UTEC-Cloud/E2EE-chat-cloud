@@ -57,10 +57,6 @@ El escalamiento de servicios con websockets es un desafío en arquitecturas mono
 
 ![image](images/new_architecture.png "Architecture proposal")
 
-## Nueva arquitectura (P2)
-
-![image](images/architecture_p2.png "New architecture (P2)")
-
 ## Pasos para desplegar la aplicación
 
 ### Lambdas
