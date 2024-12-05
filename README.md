@@ -1,8 +1,9 @@
 # E2EE-chat
 
 ## Integrantes
+* Rodrigo Gabriel Salazar Alva
 * Miguel Yurivilca
-* Rodrigo Salazar
+
 
 ## Aplicación
 
@@ -56,8 +57,11 @@ El escalamiento de servicios con websockets es un desafío en arquitecturas mono
 
 ### API Gateway
 * Crear API Gateway con WebSocket protocol
-* Crear ruta `$connect` y `$disconnect` para las lambdas onConnect y onDisconnect
-* Crear ruta `$default` para reenviar mensajes a ECS
+* Crear ruta `$connect` y `$disconnect` para las lambdas onConnect y onDisconnect (con la varaible de entorno `DDB_TABLE_CONN` correspondiente a la tabla de conexiones)
+* Crear ruta `$default` para reenviar mensajes a ECS con plantilla de integración:
+```json
+{"connectionId": "$context.connectionId", "body": $input.body}
+```
 
 ### ECS
 * Script de despliegue en `terraform`
@@ -72,28 +76,20 @@ make client
 ```
 
 ### Ejecutar Cliente
+Modificar el archivo `client/e2ee_client/main.go` con la uri del endpoint wss dek API Gateway y ejecutar el cliente.
 ```bash
 make client
 ```
 
 ## Objetivos & Topicos Cloud
-### Migración a la Nube
-Transformar la arquitectura monolítica actual a un enfoque serverless, optimizado para su despliegue en la nube, mejorando escalabilidad, eficiencia y costos.
-
-#### Topicos
-* **Cloud Serverless**: Implementación de WebSockets serverless para mejorar la comunicación en tiempo real (servicio de chat)
-* **Cloud Databases**: Uso de bases de datos NoSQL en la nube (DocumentDB and DynamoDB)
-* **Dockerización**: Uso de imágenes Docker para la implementación de funciones Lambda
-
+### Migración a la nube
+Transformar la aquitectura monolítica (WS server) actual a un enfoque basado en contendores (HTTP server), optimizando para el despliegue en la nube, mejorando escalabilidad, eficiencia y costos.
+### Bases de Datos en la Nube
+Migración de bases de datos locales a bases de datos en la nube, aprovechando las ventajas de escalabilidad, disponibilidad y mantenimiento que ofrecen los servicios de bases de datos en la nube.
+### Dockerización
+Implementación de contenedores Docker para la aplicación, permitiendo una mayor portabilidad y flexibilidad en el despliegue de la aplicación.
 ### Monitoreo y Escalabilidad
-Desarrollar un sistema de autoescalado para el servicio de chat basado en WebSockets, permitiendo adaptarse automáticamente a variaciones en la carga.
-
-#### Topicos
-* **Cloud Monitoring**: Implementación de logging, alertas y estrategias de escalabilidad automatizada para mantener la operatividad y detectar problemas proactivamente.
-
-### Misc
-* **Cloud & DevOps**: Creación de un pipeline CI/CD para el despliegue continuo y automatizado de la aplicación.
-
+Implementación de monitoreo y estrategias de escalabilidad para mantener la operatividad y eficiencia de la aplicación en la nube.
 
 ## Referencias
 
