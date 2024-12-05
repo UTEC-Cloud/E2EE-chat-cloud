@@ -57,6 +57,69 @@ El escalamiento de servicios con websockets es un desafío en arquitecturas mono
 
 ![image](images/new_architecture.png "Architecture proposal")
 
+## Implementación (Abstracción de WebSockets)
+
+### API Gateway (Websockets)
+
+API Gateway abstrae la escalabilidad de las conexiones de WebSockets.
+Los servicios de backend se comunican mediante HTTP.
+
+### Disconnect and Connect Lambdas
+
+Mappeo de conexiones de WebSockets con usuarios mediante lambdas que escriben sobre DynamoDB
+
+## Implementación (ECS)
+
+### Adaptación de Aplicación
+
+* Server WS -> Server HTTP
+* Integraciones
+    * API Gateway (POST)
+    * DynamoDB (Get Connections)
+    * DocumentDB (Replace Mongo)
+* Queries:
+    * username -> ConnectionId (1:1)
+    * ConnectionId -> username (1:n)
+
+### ECS - Dockerización
+
+Dockerización de aplicación golang. Sistema de construcción de dos pasos: compilación y minimización.
+Instalación de certificados AWS para conexiones con DocumentDB
+
+### ECS - Deployment: Terraform
+
+Infrastructure as Code:
+Despliegues de VPC+LoadBalancer+Cluster+DocumentDB+CloudWatch mediante Terraform
+
+## Implementación (Escalabilidad)
+
+### Scaling con CloudWatch
+
+AutoScaling
+
+* CloudWatch - Recolección de métricas:
+    * Métricas: CPU % usage
+* Target: Capacitiy (1-10)
+* Scaling policy:
+    * Step (+1 or -1)
+* Alarms:
+    * ScaleUp: CPU % > th2
+    * ScaleDown CPU % < th1
+ (Parámetros ajustables)
+
+## Stress Script
+
+Stress Scenario:
+Creación masiva de mensajes
+  * 2 usuarios
+  * K mensajes
+  * d tiempo entre mensajes
+
+Requerimientos:
+* 2 sesiones WS
+    * GetBundle out (inyección)
+    * RequestOTP in
+
 ## Pasos para desplegar la aplicación
 
 ### Lambdas
